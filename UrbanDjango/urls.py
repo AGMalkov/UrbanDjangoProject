@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
-
+from task3 import views
 def home_view(request):
     return HttpResponse("Добро пожаловать на главную страницу!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('task2/', include('task2.urls')),
+    path('task3/', include('task3.urls')),
     path('', home_view, name='home'),
 ]
